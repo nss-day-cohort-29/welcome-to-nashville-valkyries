@@ -14,5 +14,22 @@ const domComponents = {
         element.setAttribute(key, attributes[key]);
       }
       return element;
+    },
+    createResourcesDocumentFragments(resourcesArray) {
+      let domFrag = document.createDocumentFragment();
+
+      resourcesArray.results.forEach((character) => {
+        console.log(character.name);
+        const nameContainer = this.createDomElement({
+          elementType: "section",
+          content: character.name,
+          cssClass: "searchResult",
+        });
+        console.log(nameContainer);
+        domFrag.appendChild(nameContainer);
+      })
+      // console.log(domFrag);
+      return domFrag;
+
     }
 };

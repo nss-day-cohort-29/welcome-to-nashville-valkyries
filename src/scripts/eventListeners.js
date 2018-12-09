@@ -1,17 +1,20 @@
 
 const eventListeners = {
-  handleSearchButton() {
-    let searchInput = document.querySelector("input[placeholder='Concerts']");
+  handleSearchButton(classname) {
+    let searchInput = document.querySelector(`input[class='${classname}']`);
     let searchQuery = searchInput.value;
     searchInput.value = "";
-    console.log("eventListener 7 says ", searchQuery);
+    console.log(searchQuery);
 
     data.queryResources(searchQuery)
     .then(searchResultsArray => {
-      console.log(searchResultsArray);
-      // let resourcesFragments = domComponents.createResourcesDocumentFragments(searchResultsArray);
-      // console.log(resourcesFragments);
-      // domBuilder.appendAllResources(resourcesFragments);
+      console.log(searchResultsArray)
+      // searchResultsArray.results.forEach((characterInfo) => {
+      //   console.log("console says ", characterInfo.name, characterInfo.skin_color );
+      // })
+      let resourcesFragments = domComponents.createResourcesDocumentFragments(searchResultsArray);
+      console.log(resourcesFragments);
+      domBuilder.appendAllResources(resourcesFragments);
     });
   }
 };

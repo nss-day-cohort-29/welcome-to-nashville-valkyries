@@ -56,7 +56,7 @@ const domBuilder = {
        
         // 4 CONCERT 
         //create forms containers to hold input and button for each search
-        let concertInputAndButtonContainer = document.createElement("div");
+        const concertInputAndButtonContainer = document.createElement("div");
         formContainer.appendChild(concertInputAndButtonContainer);
 
         concertInputAndButtonContainer.appendChild(
@@ -64,8 +64,9 @@ const domBuilder = {
                 elementType: 'input',
                 cssClass: "concert",
                 attributes: {
+                    id: "concert-input",
                     type: 'text',
-                    placeholder: 'Concerts',
+                    placeholder: 'Star Wars Character',
                 },
             })
         );
@@ -80,11 +81,14 @@ const domBuilder = {
                 
             }));
             let searchButton = document.getElementById("concert-button");
-            searchButton.addEventListener("click",  () => {
-                eventListeners.handleSearchButton();
+            searchButton.addEventListener("click",  (event) => {
+                eventListeners.handleSearchButton(event.target.className);
             });
-
-            
+    },
+    appendAllResources(searchResultfrags) {
+        // console.log(searchResultfrags);
+        let resultsContainer = document.getElementById("display-container");
+        resultsContainer.appendChild(searchResultfrags);
     }
 };
 
