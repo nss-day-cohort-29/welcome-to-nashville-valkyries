@@ -10,61 +10,81 @@ const domBuilder = {
         attachToHtml.appendChild(formContainer);
         
         // 1 PARK 
-        //create forms containers to hold input and button for each search
-        let inputAndButtonContainer1 = document.createElement("form");
-        formContainer.appendChild(inputAndButtonContainer1);
+        // //create forms containers to hold input and button for each search
+        // let inputAndButtonContainer1 = document.createElement("form");
+        // formContainer.appendChild(inputAndButtonContainer1);
         
-        //create input for Park search
-        inputAndButtonContainer1.appendChild(domComponents.createDomElement("input", null, null, "type", "text", "placeholder", "Parks by Feature"));
+        // //create input for Park search
+        // inputAndButtonContainer1.appendChild(domComponents.createDomElement("input", null, null, "type", "text", "placeholder", "Parks by Feature"));
         
-        //create button for Park search BUTTON BUTTON BUTTON
-        inputAndButtonContainer1.appendChild(domComponents.createDomElement("button", null, null, "type", "button", "id", "park-button"));
+        // //create button for Park search BUTTON BUTTON BUTTON
+        // inputAndButtonContainer1.appendChild(domComponents.createDomElement("button", null, null, "type", "button", "id", "park-button"));
         
 
-        // 2 RESTAURANT 
-        //create forms containers to hold input and button for each search
-        let inputAndButtonContainer2 = document.createElement("form");
-        formContainer.appendChild(inputAndButtonContainer2);
+        // // 2 RESTAURANT 
+        // //create forms containers to hold input and button for each search
+        // let inputAndButtonContainer2 = document.createElement("form");
+        // formContainer.appendChild(inputAndButtonContainer2);
 
-        //create input for restaurant search
-        inputAndButtonContainer2.appendChild(domComponents.createDomElement("input", null, null, "type", "text", "placeholder", "Restaurants by Feature"));
-        //create button for restaurant search BUTTON BUTTON BUTTON
-        inputAndButtonContainer2.appendChild(domComponents.createDomElement("button", null, null, "type", "button", "id", "restaurant-button"));
+        // //create input for restaurant search
+        // inputAndButtonContainer2.appendChild(domComponents.createDomElement("input", null, null, "type", "text", "placeholder", "Restaurants by Feature"));
+        // //create button for restaurant search BUTTON BUTTON BUTTON
+        // inputAndButtonContainer2.appendChild(domComponents.createDomElement("button", null, null, "type", "button", "id", "restaurant-button"));
 
-        // 3 MEETUPS 
-        //create forms containers to hold input and button for each search
-        let inputAndButtonContainer3 = document.createElement("form");
-        formContainer.appendChild(inputAndButtonContainer3);
-        //create input for restaurant search
+        // // 3 MEETUPS 
+        // let meetupInputAndButtonContainer = document.createElement("form");
+        // formContainer.appendChild(meetupInputAndButtonContainer);
 
-        inputAndButtonContainer3.appendChild(domComponents.createDomElement("input", null, null, "type", "text", "placeholder", "Meetups by Feature"));
-        //create button for restaurant search BUTTON BUTTON BUTTON
-        inputAndButtonContainer3.appendChild(domComponents.createDomElement("button", null, null, "type", "button", "id", "meetups-button"));
-
+        // meetupInputAndButtonContainer.appendChild(
+        //     domComponents.createDomElement({
+        //       elementType: "input",
+        //       attributes: {
+        //           type: "text",
+        //           placeholder: "meetups",
+        //       },    
+        //     })
+        // );
+        // meetupInputAndButtonContainer.appendChild(
+        //     domComponents.createDomElement({
+        //         elementType: "button",
+        //         attributes: {
+        //             id: "meetup-button",
+        //         }
+        //     })
+        // );
+        
+       
         // 4 CONCERT 
         //create forms containers to hold input and button for each search
-        let inputAndButtonContainer4 = document.createElement("form");
-        formContainer.appendChild(inputAndButtonContainer4);
-        //create input for restaurant search
-        inputAndButtonContainer4.appendChild(
+        let concertInputAndButtonContainer = document.createElement("div");
+        formContainer.appendChild(concertInputAndButtonContainer);
+
+        concertInputAndButtonContainer.appendChild(
             domComponents.createDomElement({
                 elementType: 'input',
+                cssClass: "concert",
                 attributes: {
                     type: 'text',
-                    placeholder: 'Concerts Bitch',
+                    placeholder: 'Concerts',
                 },
             })
         );
-        //create button for restaurant search BUTTON BUTTON BUTTON
-        // "button", null, null, "type", "button", "id", "concert-button"
-        inputAndButtonContainer4.appendChild(
+        concertInputAndButtonContainer.appendChild(
             domComponents.createDomElement({
                 elementType: "button",
+                content: "Search StarWars Character",
+                cssClass: "concert",
                 attributes: {
                     id: 'concert-button',
                 }
-
+                
             }));
+            let searchButton = document.getElementById("concert-button");
+            searchButton.addEventListener("click",  () => {
+                eventListeners.handleSearchButton();
+            });
+
+            
     }
 };
 
@@ -74,26 +94,5 @@ const domBuilder = {
  * 
  */
 
-// const DOMContainer = {
-//   displayContainer: document.getElementById("display-container"),
-// }
-
-// const { API_URL } = thing
-
-// const domBuilder = {
-//     appendInputForm({ displayContainer }) {
-//         const formContainer = document.createElement("section");
-//         displayContainer.appendChild(formContainer);
-//         const inputAndButtonContainer = document.createElement("form");
-//         formContainer.appendChild(inputAndButtonContainer1);
-//         inputAndButtonContainer.appendChild(domComponents.flksj(
-//             {
-//               elementType: 'input',
-//               content: {},
-//               cssClass
-//             }))
-//         inputAndButtonContainer.appendChild(domComponents.createDomElement("button", null, null, "type", "button", "id", "park-button"));
-//     }
-// };
-
 domBuilder.appendInputForm();
+

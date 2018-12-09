@@ -1,15 +1,15 @@
 body {
-    background-color: lightblue;
+    background-color: 	#dfd8d1;
 }
 
 
 /* meant for input form */
-input {
+/* input {
 
-}
+} */
 
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #b86565; /* Green */
     border: 2px solid black;
     color: white;
     margin: 10px;
