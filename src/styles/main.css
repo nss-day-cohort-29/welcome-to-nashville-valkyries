@@ -26,3 +26,8 @@ section {
     display: flex;
     flex-direction: column;
 }
+
+.searchResult {
+    border: 3px solid #3d3a4b;
+    margin: 5px;
+}
