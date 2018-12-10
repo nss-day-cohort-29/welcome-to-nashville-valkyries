@@ -10,29 +10,10 @@ const domBuilder = {
         attachToHtml.appendChild(formContainer);
         
         // 1 PARK 
-        // //create forms containers to hold input and button for each search
-        // let inputAndButtonContainer1 = document.createElement("form");
-        // formContainer.appendChild(inputAndButtonContainer1);
-        
-        // //create input for Park search
-        // inputAndButtonContainer1.appendChild(domComponents.createDomElement("input", null, null, "type", "text", "placeholder", "Parks by Feature"));
-        
-        // //create button for Park search BUTTON BUTTON BUTTON
-        // inputAndButtonContainer1.appendChild(domComponents.createDomElement("button", null, null, "type", "button", "id", "park-button"));
-        
-
-        // // 2 RESTAURANT 
-        // //create forms containers to hold input and button for each search
-        // let inputAndButtonContainer2 = document.createElement("form");
-        // formContainer.appendChild(inputAndButtonContainer2);
-
-        // //create input for restaurant search
-        // inputAndButtonContainer2.appendChild(domComponents.createDomElement("input", null, null, "type", "text", "placeholder", "Restaurants by Feature"));
-        // //create button for restaurant search BUTTON BUTTON BUTTON
-        // inputAndButtonContainer2.appendChild(domComponents.createDomElement("button", null, null, "type", "button", "id", "restaurant-button"));
-
+       // 2 RESTAURANT 
+       
         // // 3 MEETUPS 
-        // let meetupInputAndButtonContainer = document.createElement("form");
+        // let meetupInputAndButtonContainer = document.createElement("div");
         // formContainer.appendChild(meetupInputAndButtonContainer);
 
         // meetupInputAndButtonContainer.appendChild(
