@@ -26,6 +26,14 @@ const domComponents = {
           cssClass: "searchResult",
         });
         console.log(nameContainer);
+        for (property in character) {
+          // console.log(character);
+          nameContainer.appendChild(this.createDomElement({
+            elementType: "p",
+            content: character[property],
+            cssClass: "more-info",
+          }))
+        }
         domFrag.appendChild(nameContainer);
       })
       // console.log(domFrag);

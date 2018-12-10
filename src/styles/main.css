@@ -30,4 +30,5 @@ section {
 .searchResult {
     border: 3px solid #3d3a4b;
     margin: 5px;
+    padding: 2px;
 }
