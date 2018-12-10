@@ -1,27 +1,37 @@
-let searchVar = "mexican";
+// DECLARING THE SEARCH VARIABLE AND THE ARRAY FOR RESULTS TO BE RETURNED
+
+let searchVar = "china";
 let parsedRestaraunts = [];
 
-function restarauntFetch(cuisineSearchValue) {
+// FUNCTION USING THE SEARCH VARIABLE TO FETCH FROM API WITH SPECIFIC TERM
+
+function restarauntFetch(searchVar) {
           
     fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&q=${searchVar}&apikey=f0b5e8bf6e495860c5ebc585e9821882`)
     .then(response => response.json())
     .then(parsedResponse => {
         console.log(parsedResponse)
-    } ) 
 
-    for(let i in restaurant) {
-        let restaurantName = restaurant.name;
-        let restaurantAddress = restaurant.location.address;
-        let restaurantRating = restaurant.user_rating.aggregate_rating;
-          
-        //       if (food.cuisine.cuisine_name === "Vietnamese") {
-        //         console.log(food.cuisine.cuisine_id);
-        //           cuisineSearchValue = food.cuisine.cuisine_id;
-        //       } 
-              
-        //   })
-  };
+//  FILTERING OUT SPECIFIC ELEMENTS OF SEARCH RESULTS TO RETURN (EX. NAME, ADDRESS, RATING)       
 
+    parsedResponse.restaurants.forEach(selection => {
+        let restaurantName = selection.restaurant.name;
+        let restaurantAddress = selection.restaurant.location.address;
+        let restaurantRating = selection.restaurant.user_rating.aggregate_rating;
+        let restaurantInfo = `${restaurantName} Address: ${restaurantAddress} Rating: ${restaurantRating}`;
+        parsedRestaraunts.push(restaurantInfo);
+// RETURNING FILTERED RESULTS TO THE ARRAY        
+        return parsedRestaraunts;
+    })
+})
+
+// APPEND ARRAY OF RESULTS TO THE DOM        
+
+        console.log(parsedRestaraunts);
+        //domBuilder.domCompBuilder(parsedRestaraunts);
+};
+    
+restarauntFetch(searchVar);
 
      
         // let cuisines = [
