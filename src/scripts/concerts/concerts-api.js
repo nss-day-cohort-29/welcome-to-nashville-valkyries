@@ -17,3 +17,4 @@ function concertsFetch () {
         // domBuilder.domCompBuilder(parsedConcerts);
         console.log(parsedConcerts);
 };
+concertsFetch(); //remove once eventListeners.js is calling concertsFetch();
