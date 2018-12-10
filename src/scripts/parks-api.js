@@ -1,18 +1,18 @@
 // This module interacts with the API, meaning all fetch calls to the json-server API will be in this module.
 
-    const parks_url = "https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=mGIe1HeHEMg9aF55Guy8rdqhN"
+    const parksAPI = "https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=mGIe1HeHEMg9aF55Guy8rdqhN"
 const local_api = "http://localhost:8088/savedItinerary"
 const parks_api = {
   getParksSelection: function () {
-    return fetch(parks_url)
+    return fetch(parksAPI)
       .then(response => response.json())
   }
 }
 
 // creating dropdown box for limiting selections
 
-const createParksSelectBox = (parks) => {
-  const parksSelectBox = document.createElement("select")
+const createParksFeatureSelectBox = (parks) => {
+  const parksFeatureSelectBox = document.createElement("select")
   parksSelectBox.setAttribute("id", "park_selection")
 
   // loop through array of park objects and test for value of desired key selection
@@ -54,8 +54,34 @@ const createParksSelectBox = (parks) => {
   return parksSelectBox
 }
 
-parks_api.getParksSelection()
+parksAPI.getParksSelection()
   .then((parks) => {
     let parksSelectionFunction = createParksSelectBox(parks)
     document.getElementById("parks_select").appendChild(parksSelectionFunction)
   })
+
+// eventListeners.userParksFeatureSelction;
+// let userParksFeatureSelection = ""
+// let parsedParks = [];
+
+// function parksFetch (userParksFeatureSelection) {
+//   fetch ("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=mGIe1HeHEMg9aF55Guy8rdqhN")
+//         .then (response => response.json())
+//         .then (parksArray => {
+// // use an includes property to see if userParksFeatureSelction is contained in key
+//                 parksArray.forEach(parkObj => {
+//                   if (parkObj.keys.includes(`${userParksFeatureSelection}`)) {
+//                     if (parkObj.keys.value="Yes") {
+//                       parsedParks.push(parkObj.park_name)
+//                     }
+//                       else {
+//                         console.log("no parks found")
+//                       }
+//                   }
+//                 })
+//                 return parsedParks;
+//         });
+//         console.log(parsedParks);
+// };
+
+// parksFetch(userParksFeatureSelection);
