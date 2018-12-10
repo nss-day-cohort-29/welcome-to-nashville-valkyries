@@ -1,10 +1,17 @@
 let today = new Date();
 let searchDate = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
-let concertsSearchParam = "music"//eventListeners.concertsSearchParam;
+
 let parsedConcerts = [];
 
-function concertsFetch (concertsSearchParam) {fetch
-(`https://app.ticketmaster.com/discovery/v2/events.json?dmaId=343&classificationName=${concertsSearchParam}&localStartDateTime=${searchDate}T00:00:01,${searchDate}T23:59:59&apikey=gOoLh8VX4xnv0GAbvCblAvu8bCKOVE95`)
+// console.log(concertsDefaultParam);
+// const concertsFetch = (string) => {
+//         console.log("hello", string);
+// }
+function concertsFetch (searchdos) {
+//        console.log('here', searchdos); 
+        
+        fetch
+(`https://app.ticketmaster.com/discovery/v2/events.json?dmaId=343&classificationName=${searchdos}&localStartDateTime=${searchDate}T00:00:01,${searchDate}T23:59:59&apikey=gOoLh8VX4xnv0GAbvCblAvu8bCKOVE95`)
         .then (response => response.json())
         .then (concertInfo => {
 
@@ -15,11 +22,13 @@ function concertsFetch (concertsSearchParam) {fetch
                         let event = `${eventName}, at ${venue}, Genre: ${genre}`;
                         parsedConcerts.push(event)
                 })
-
-                return parsedConcerts;
+                domComponents.createResourcesDocumentFragments(parsedConcerts);
+                
+                // return parsedConcerts;
+                
         });
         console.log(parsedConcerts);
-        //domBuilder.domCompBuilder(parsedConcerts);
+        // domBuilder.domCompBuilder(parsedConcerts);
 };
 
-concertsFetch();
+// concertsFetch();

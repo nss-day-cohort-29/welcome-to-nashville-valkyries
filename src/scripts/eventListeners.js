@@ -2,20 +2,15 @@
 const eventListeners = {
   handleSearchButton(classname) {
     let searchInput = document.querySelector(`input[class='${classname}']`);
-    let searchQuery = searchInput.value;
+    let searchButtonCall = searchInput.value;
     searchInput.value = "";
-    console.log(searchQuery);
-
-    data.queryResources(searchQuery)
-    .then(searchResultsArray => {
-      console.log(searchResultsArray)
-      // searchResultsArray.results.forEach((characterInfo) => {
-      //   console.log("console says ", characterInfo.name, characterInfo.skin_color );
-      // })
-      let resourcesFragments = domComponents.createResourcesDocumentFragments(searchResultsArray);
-      console.log(resourcesFragments);
-      domBuilder.appendAllResources(resourcesFragments);
-    });
+    console.log(searchButtonCall);
+    
+    let concertResults = concertsFetch(searchButtonCall);
+    console.log(parsedConcerts);
+    
+    // console.log(queryResult);
+  
   }
 };
 

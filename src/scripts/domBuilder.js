@@ -47,14 +47,14 @@ const domBuilder = {
                 attributes: {
                     id: "concert-input",
                     type: 'text',
-                    placeholder: 'Star Wars Character',
+                    placeholder: 'Search',
                 },
             })
         );
         concertInputAndButtonContainer.appendChild(
             domComponents.createDomElement({
                 elementType: "button",
-                content: "Search StarWars Character",
+                content: "Search Nashville Concert",
                 cssClass: "concert",
                 attributes: {
                     id: 'concert-button',
