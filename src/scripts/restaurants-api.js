@@ -1,6 +1,6 @@
 // DECLARING THE SEARCH VARIABLE AND THE ARRAY FOR RESULTS TO BE RETURNED
 
-let searchVar = "china";
+// let searchVar = "china";
 let parsedRestaraunts = [];
 
 // FUNCTION USING THE SEARCH VARIABLE TO FETCH FROM API WITH SPECIFIC TERM
@@ -23,6 +23,9 @@ function restarauntFetch(searchVar) {
 // RETURNING FILTERED RESULTS TO THE ARRAY        
         return parsedRestaraunts;
     })
+    let domFragReturn = domComponents.createResourcesDocumentFragments(parsedRestaraunts);
+    console.log(domFragReturn);
+    domBuilder.appendAllResources(domFragReturn);
 })
 
 // APPEND ARRAY OF RESULTS TO THE DOM        
@@ -31,7 +34,7 @@ function restarauntFetch(searchVar) {
         //domBuilder.domCompBuilder(parsedRestaraunts);
 };
     
-restarauntFetch(searchVar);
+// restarauntFetch(searchVar);
 
      
         // let cuisines = [
