@@ -10,6 +10,21 @@ const domBuilder = {
         attachToHtml.appendChild(formContainer);
         
         // 1 PARK 
+        let parkDropdownAndButtonContainer = document.createElement("div");
+        formContainer.appendChild(parkDropdownAndButtonContainer);
+        let parkDropDown = document.createElement("select");
+        parkDropdownAndButtonContainer.appendChild(parkDropDown);
+
+        let parkTypes = ["Dog Park", "Biking Trails", "BasketBall Courts", "VolleyBall", "Lake", "Baseball Fields", "Picnic Shelters"];
+        let parkClassNames = ["parkOptionDog", "parkOptionHike", "parkOptionBasketBall", "parkOptionLake", "parkOptionBaseballFields", "parkOptionPicnicShelters"];
+
+        
+        for (let i = 0; i < parkTypes.length; i++) {
+            let optionElement = document.createElement("option");
+            optionElement.textContent = parkTypes[i];
+            optionElement.setAttribute("class", parkClassNames[i]);
+            parkDropDown.appendChild(optionElement);
+        };
 
        // 2 RESTAURANT 
        let restaurantInputAndButtonContainer = document.createElement("div");
