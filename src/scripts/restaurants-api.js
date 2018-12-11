@@ -1,7 +1,7 @@
 // DECLARING THE SEARCH VARIABLE AND THE ARRAY FOR RESULTS TO BE RETURNED
 
 // let searchVar = "china";
-let parsedRestaraunts = [];
+let parsedRestaraunts = ["restaurants"];
 
 // FUNCTION USING THE SEARCH VARIABLE TO FETCH FROM API WITH SPECIFIC TERM
 
