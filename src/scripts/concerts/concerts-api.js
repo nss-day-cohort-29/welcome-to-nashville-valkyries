@@ -7,11 +7,11 @@ let parsedConcerts = [];
 // const concertsFetch = (string) => {
 //         console.log("hello", string);
 // }
-function concertsFetch (searchdos) {
-//        console.log('here', searchdos); 
+function concertsFetch (musicsearchUserInput) {
+//        console.log(musicsearchUserInput); 
         
         fetch
-(`https://app.ticketmaster.com/discovery/v2/events.json?dmaId=343&classificationName=${searchdos}&localStartDateTime=${searchDate}T00:00:01,${searchDate}T23:59:59&apikey=gOoLh8VX4xnv0GAbvCblAvu8bCKOVE95`)
+(`https://app.ticketmaster.com/discovery/v2/events.json?dmaId=343&classificationName=${musicsearchUserInput}&localStartDateTime=${searchDate}T00:00:01,${searchDate}T23:59:59&apikey=gOoLh8VX4xnv0GAbvCblAvu8bCKOVE95`)
         .then (response => response.json())
         .then (concertInfo => {
 
@@ -21,13 +21,14 @@ function concertsFetch (searchdos) {
                         let venue = concert._embedded.venues[0].name;
                         let event = `${eventName}, at ${venue}, Genre: ${genre}`;
                         parsedConcerts.push(event)
-                })
-                domComponents.createResourcesDocumentFragments(parsedConcerts);
-                
+                });
+                let domFragReturn = domComponents.createResourcesDocumentFragments(parsedConcerts);
+                        console.log(domFragReturn);
+                        domBuilder.appendAllResources(domFragReturn);
                 // return parsedConcerts;
                 
         });
-        console.log(parsedConcerts);
+        // console.log(parsedConcerts);
         // domBuilder.domCompBuilder(parsedConcerts);
 };
 

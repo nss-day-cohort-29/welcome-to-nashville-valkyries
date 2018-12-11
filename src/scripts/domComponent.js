@@ -15,9 +15,16 @@ const domComponents = {
       return element;
     },
     createResourcesDocumentFragments(concertArray) {
-      console.log(concertArray)
+      console.log(concertArray.length);
       let domFrag = document.createDocumentFragment();
-
+      for (let i = 0; i < concertArray.length; i++) {
+        domFrag.appendChild(domComponents.createDomElement({
+          elementType: "p",
+          content: concertArray[i],
+        }))
+      }
+      // console.log(domFrag);
+      return domFrag;
 
 
     },

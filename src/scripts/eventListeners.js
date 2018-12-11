@@ -7,7 +7,7 @@ const eventListeners = {
     console.log(searchButtonCall);
     
     let concertResults = concertsFetch(searchButtonCall);
-    console.log(parsedConcerts);
+    // console.log(parsedConcerts);  
     
     // console.log(queryResult);
   
