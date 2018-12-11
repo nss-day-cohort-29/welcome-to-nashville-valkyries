@@ -4,7 +4,7 @@ const eventListeners = {
     let searchInput = document.querySelector(`input[class='${classname}']`);
     let searchButtonCall = searchInput.value;
     searchInput.value = "";
-    console.log(searchButtonCall);
+    // console.log(searchButtonCall);
     
     concertsFetch(searchButtonCall);
 
@@ -13,7 +13,7 @@ const eventListeners = {
     let restaurantSearchInput = document.querySelector(`input[class='${classname}']`);
     let restaurantSearchButtonCall = restaurantSearchInput.value;
     restaurantSearchInput.value = "";
-    console.log(restaurantSearchButtonCall)
+    // console.log(restaurantSearchButtonCall)
 
     restarauntFetch(restaurantSearchButtonCall)
   },
@@ -21,7 +21,7 @@ const eventListeners = {
     let searchInput = document.querySelector(`input[class='${classname}']`);
     let searchButtonCall = searchInput.value;
     searchInput.value = "";
-    console.log(searchButtonCall);
+    // console.log(searchButtonCall);
 
     meetupsObject.meetUpsFetch(searchButtonCall)
   },
@@ -45,12 +45,33 @@ const eventListeners = {
 
   },
   saveButton(classname) {
+    let elementToRemove = document.querySelector(".search-result-box");
     let saveContentPointer = classname.target.className;
-    let chosenContentForItenerary = document.querySelector(`li[class='${saveContentPointer}']`)
-    let savedContent = chosenContentForItenerary.textContent;
-    console.log(savedContent)//this will print saved selection to console
-    //REMOVE THE SEARCH RESULT WINDOW HERE.... I THINK
+    let chosenContentForItinerary = document.querySelector(`li[class='${saveContentPointer}']`)
+    let savedContent = chosenContentForItinerary.textContent;
+    let contentType = saveContentPointer.split("-")[0];
+    let concatString = "";
+    
+    switch (contentType) {
+      case "restaurants":
+        concatString = `Restaurant: ${savedContent}`
+        break;
+      case "parks":
+        concatString = `Park: ${savedContent}`
+        break;
+      case "meetups":
+        concatString = `Meetup: ${savedContent}`
+        break;
+      case "concerts":
+        concatString = `Concert: ${savedContent}`
+        break;
+      default:
+        break;
+    }
+    console.log(`ConcatString:  ${concatString}`)
+    domComponents.appendIteneraryFragments(concatString);
 
+    elementToRemove.parentNode.removeChild(elementToRemove);
   } 
 };
 
