@@ -11,6 +11,33 @@ const domBuilder = {
         
         // 1 PARK 
        // 2 RESTAURANT 
+       let restaurantInputAndButtonContainer = document.createElement("div");
+       formContainer.appendChild(restaurantInputAndButtonContainer);
+
+       restaurantInputAndButtonContainer.appendChild(
+           domComponents.createDomElement({
+               elementType: "input",
+               cssClass: "restaurants",
+               attributes: {
+                   type: "text",
+                   placeholder: "restaurants",
+               },
+           })
+       );
+       restaurantInputAndButtonContainer.appendChild(
+           domComponents.createDomElement({
+               elementType: "button",
+               content: "Search Nashville Restaurants",
+               cssClass: "restaurants",
+               attributes: {
+                   id: "restaurant-button"
+               },
+           })
+       );
+        let restaurantSearchButton = document.getElementById("restaurant-button");
+        restaurantSearchButton.addEventListener("click",  (event) => {
+            eventListeners.handleRetaurantButton(event.target.className);
+        });
        
         // // 3 MEETUPS 
         let meetupInputAndButtonContainer = document.createElement("div");
@@ -19,6 +46,7 @@ const domBuilder = {
         meetupInputAndButtonContainer.appendChild(
             domComponents.createDomElement({
               elementType: "input",
+              cssClass: "meetups",
               attributes: {
                   type: "text",
                   placeholder: "meetups",
@@ -29,11 +57,16 @@ const domBuilder = {
             domComponents.createDomElement({
                 elementType: "button",
                 content: "Search Nashville Meetups",
+                cssClass: "meetups",
                 attributes: {
                     id: "meetup-button",
-                }
+                },
             })
         );
+        let meetupSearchButton = document.getElementById("meetup-button");
+        meetupSearchButton.addEventListener("click",  (event) => {
+            eventListeners.handleMeetupSearchButton(event.target.className);
+        });
         
        
         // 4 CONCERT 
@@ -62,9 +95,9 @@ const domBuilder = {
                 },
                 
             }));
-            let searchButton = document.getElementById("concert-button");
-            searchButton.addEventListener("click",  (event) => {
-                eventListeners.handleSearchButton(event.target.className);
+            let concertSearchButton = document.getElementById("concert-button");
+            concertSearchButton.addEventListener("click",  (event) => {
+                eventListeners.handleConcertButton(event.target.className);
             });
     },
     appendAllResources(searchResultfrags) {

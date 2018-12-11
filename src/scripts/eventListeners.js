@@ -1,15 +1,29 @@
 
 const eventListeners = {
-  handleSearchButton(classname) {
+  handleConcertButton(classname) {
     let searchInput = document.querySelector(`input[class='${classname}']`);
     let searchButtonCall = searchInput.value;
     searchInput.value = "";
     console.log(searchButtonCall);
     
-    let concertResults = concertsFetch(searchButtonCall);
-    // console.log(parsedConcerts);  
-    
-    // console.log(queryResult);
+    concertsFetch(searchButtonCall);
+
+  },
+  handleRetaurantButton(classname) {
+    let restaurantSearchInput = document.querySelector(`input[class='${classname}']`);
+    let restaurantSearchButtonCall = restaurantSearchInput.value;
+    restaurantSearchInput.value = "";
+    console.log(restaurantSearchButtonCall)
+
+    restarauntFetch(restaurantSearchButtonCall)
+  },
+  handleMeetupSearchButton(classname) {
+    let searchInput = document.querySelector(`input[class='${classname}']`);
+    let searchButtonCall = searchInput.value;
+    searchInput.value = "";
+    console.log(searchButtonCall);
+
+    meetupsObject.meetUpsFetch(searchButtonCall)
   },
 };
 
