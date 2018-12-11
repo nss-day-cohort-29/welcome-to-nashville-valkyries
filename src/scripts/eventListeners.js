@@ -1,22 +1,33 @@
 
 const eventListeners = {
-  handleSearchButton(classname) {
+  handleConcertButton(classname) {
     let searchInput = document.querySelector(`input[class='${classname}']`);
-    let searchQuery = searchInput.value;
+    let searchButtonCall = searchInput.value;
     searchInput.value = "";
-    console.log(searchQuery);
+    console.log(searchButtonCall);
+    
+    concertsFetch(searchButtonCall);
 
-    data.queryResources(searchQuery)
-    .then(searchResultsArray => {
-      console.log(searchResultsArray)
-      // searchResultsArray.results.forEach((characterInfo) => {
-      //   console.log("console says ", characterInfo.name, characterInfo.skin_color );
-      // })
-      let resourcesFragments = domComponents.createResourcesDocumentFragments(searchResultsArray);
-      console.log(resourcesFragments);
-      domBuilder.appendAllResources(resourcesFragments);
-    });
-  }
+  },
+  handleRetaurantButton(classname) {
+    let restaurantSearchInput = document.querySelector(`input[class='${classname}']`);
+    let restaurantSearchButtonCall = restaurantSearchInput.value;
+    restaurantSearchInput.value = "";
+    console.log(restaurantSearchButtonCall)
+
+    restarauntFetch(restaurantSearchButtonCall)
+  },
+  handleMeetupSearchButton(classname) {
+    let searchInput = document.querySelector(`input[class='${classname}']`);
+    let searchButtonCall = searchInput.value;
+    searchInput.value = "";
+    console.log(searchButtonCall);
+
+    meetupsObject.meetUpsFetch(searchButtonCall)
+  },
+  saveButton(classname) {
+    console.log('click')
+  } //not working 😥
 };
 
 
