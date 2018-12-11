@@ -104,7 +104,6 @@ const domBuilder = {
         
         let resultsContainer = document.getElementById("display-container");
         resultsContainer.appendChild(searchResultfrags);
-        
 
     }
 };
