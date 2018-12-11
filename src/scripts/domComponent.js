@@ -9,6 +9,10 @@ const domComponents = {
         element.classList.add(cssClass);
       }
 
+      if (elementType === "button" && content === "Save") {
+        element.addEventListener("click", eventListeners.saveButton)
+      };
+
       for (let key in attributes) {
         element.setAttribute(key, attributes[key]);
       }
@@ -26,14 +30,14 @@ const domComponents = {
       let domFrag = document.createDocumentFragment();
       
       for (let i = 0; i < concertArray.length; i++) {
-        domFrag.appendChild(domComponents.createDomElement({
+        domFrag.appendChild(this.createDomElement({
           elementType: "li",
           content: concertArray[i],
         }));
-        domFrag.appendChild(domComponents.createDomElement({
+        domFrag.appendChild(this.createDomElement({
           elementType: "button",
           content: "Save",
-          cssClass: `concert${i}`,
+          cssClass: `result${i}`,
         }));
         
       };
