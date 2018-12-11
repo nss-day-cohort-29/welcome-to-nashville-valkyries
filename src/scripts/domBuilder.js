@@ -10,6 +10,7 @@ const domBuilder = {
         attachToHtml.appendChild(formContainer);
         
         // 1 PARK 
+
        // 2 RESTAURANT 
        let restaurantInputAndButtonContainer = document.createElement("div");
        formContainer.appendChild(restaurantInputAndButtonContainer);
