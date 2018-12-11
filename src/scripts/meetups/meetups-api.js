@@ -6,10 +6,11 @@ let eventsArray = ["meetups"];
 
 const meetupsObject = {
     meetUpsFetch(meetUpsSearchParam) {
-    return fetch(`https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&start_date.keyword=today&q=${meetUpsSearchParam}`, {
+    return fetch(`https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&start_date.keyword=today&q=${meetUpsSearchParam}&token`, {
         headers: {"Authorization": "Bearer Z7Y4SSESJQECHYEKDADA"}})
         .then(response => response.json())
         .then(response => {
+            eventsArray = ["meetups"];
             response.events.forEach(event => {
                 let eventName = event.name.text;
                 // The below function returns another fetch which parses the appropriate event venue name based on the venue ID.

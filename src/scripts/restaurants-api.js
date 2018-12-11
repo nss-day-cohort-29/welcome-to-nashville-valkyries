@@ -10,6 +10,7 @@ function restarauntFetch(searchVar) {
     fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&q=${searchVar}&apikey=f0b5e8bf6e495860c5ebc585e9821882`)
     .then(response => response.json())
     .then(parsedResponse => {
+        parsedRestaraunts = ["restaurants"];
         console.log(parsedResponse)
 
 //  FILTERING OUT SPECIFIC ELEMENTS OF SEARCH RESULTS TO RETURN (EX. NAME, ADDRESS, RATING)       
