@@ -1,5 +1,5 @@
 
-let eventsArray = [];
+let eventsArray = ["meetups"];
 
 // This object contains the method which fetches the queried meetups data from the Eventbrite API. It then parses this information in order to
 // append it to the DOM.
