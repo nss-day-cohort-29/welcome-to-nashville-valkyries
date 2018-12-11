@@ -4,7 +4,6 @@ const domComponents = {
       const element = document.createElement(elementType);
       element.textContent = content;
       
-
       if (cssClass) {
         element.classList.add(cssClass);
       }
@@ -18,8 +17,9 @@ const domComponents = {
       }
       return element;
     },
-    createResourcesDocumentFragments(concertArray) {
-      console.log(concertArray.length);
+
+    createResourcesDocumentFragments(resultsArray) {
+      // console.log(resultsArray.length);
       const homeDiv = document.getElementById("display-container")
       let searchResultContainer = this.createDomElement({
         elementType: "div",
@@ -29,12 +29,12 @@ const domComponents = {
       homeDiv.appendChild(searchResultContainer);
       let domFrag = document.createDocumentFragment();
       
-      for (let i = 0; i < concertArray.length-1; i++) {
-        let itemClass = concertArray[0];
+      for (let i = 0; i < resultsArray.length-1; i++) {
+        let itemClass = resultsArray[0];
         domFrag.appendChild(this.createDomElement({
           elementType: "li",
           cssClass: `${itemClass}-result${i}`,
-          content: concertArray[i+1],
+          content: resultsArray[i+1],
         }));
         domFrag.appendChild(this.createDomElement({
           elementType: "button",
@@ -43,10 +43,20 @@ const domComponents = {
         }));
         
       };
-
-      
       // console.log(domFrag);
       searchResultContainer.appendChild(domFrag);
       return domFrag;
     },
+
+      
+      appendIteneraryFragments (savedResult) {
+      let itineraryFrag = document.createDocumentFragment();
+      let itineraryDiv = document.getElementById("itinerary-container");
+      console.log(`Result text to be saved:  ${savedResult}`)
+      itineraryFrag.appendChild(this.createDomElement({
+          elementType: "div",
+          content: `${savedResult}`
+          }));
+        itineraryDiv.appendChild(itineraryFrag);
+        }
 };
