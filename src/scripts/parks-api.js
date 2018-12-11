@@ -2,7 +2,7 @@
 
   let parksArray = [];
      function parksFetch (parksSearchParam) {
-      fetch("https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=mGIe1HeHEMg9aF55Guy8rdqhN&")
+      fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=mGIe1HeHEMg9aF55Guy8rdqhN&${parksSearchParam}=Yes`)
           .then(response => response.json())
           .then(response => {
               response.forEach(parksObject => {
@@ -13,4 +13,4 @@
               });
           })
   };
-  parksFetch("lake");
+  parksFetch("dog_park");
