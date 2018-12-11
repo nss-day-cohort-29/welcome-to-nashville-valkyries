@@ -4,6 +4,7 @@ function concertsFetch (concertsSearchParam) {
         let searchDate = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
         let parsedConcerts = ["concerts"];
 
+
         fetch(`https://app.ticketmaster.com/discovery/v2/events.json?dmaId=343&classificationName=${concertsSearchParam}&localStartDateTime=${searchDate}T00:00:01,${searchDate}T23:59:59&apikey=gOoLh8VX4xnv0GAbvCblAvu8bCKOVE95`)
         .then (response => response.json())
         .then (concertInfo => {

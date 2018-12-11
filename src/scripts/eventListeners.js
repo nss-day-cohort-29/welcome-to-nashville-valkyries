@@ -26,8 +26,13 @@ const eventListeners = {
     meetupsObject.meetUpsFetch(searchButtonCall)
   },
   saveButton(classname) {
-    console.log('click')
-  } //not working 😥
+    let saveContentPointer = classname.target.className;
+    let chosenContentForItenerary = document.querySelector(`li[class='${saveContentPointer}']`)
+    let savedContent = chosenContentForItenerary.textContent;
+    console.log(savedContent)//this will print saved selection to console
+    //REMOVE THE SEARCH RESULT WINDOW HERE.... I THINK
+
+  } 
 };
 
 
