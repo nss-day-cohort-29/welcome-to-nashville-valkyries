@@ -9,8 +9,8 @@
                   let parkName = parksObject.park_name;
                   let parkAddress = parksObject.mapped_location_address;
                   parksArray.push(parkName + " " + parkAddress);
-                  console.log(parkName + " " + parkAddress);
-              });
+                });
+                console.table(parksArray)
           })
   };
   parksFetch("dog_park");
