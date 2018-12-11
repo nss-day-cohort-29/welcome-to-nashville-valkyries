@@ -26,8 +26,8 @@ const eventListeners = {
     meetupsObject.meetUpsFetch(searchButtonCall)
   },
   saveButton(classname) {
-    console.log('click')
-  } //not working 😥
+    console.log(event.target.className)
+  } 
 };
 
 

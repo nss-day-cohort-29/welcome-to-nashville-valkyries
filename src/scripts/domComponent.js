@@ -33,6 +33,7 @@ const domComponents = {
         domFrag.appendChild(this.createDomElement({
           elementType: "li",
           content: concertArray[i],
+          cssClass: `result${i}`,
         }));
         domFrag.appendChild(this.createDomElement({
           elementType: "button",
