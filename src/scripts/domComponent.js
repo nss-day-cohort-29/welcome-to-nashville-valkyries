@@ -16,16 +16,28 @@ const domComponents = {
     },
     createResourcesDocumentFragments(concertArray) {
       console.log(concertArray.length);
+      const homeDiv = document.getElementById("display-container")
+      let searchResultContainer = this.createDomElement({
+        elementType: "div",
+        content: "YOUR SEARCH RESULTS ARE",
+        cssClass: "search-result-box"
+      })
+      homeDiv.appendChild(searchResultContainer);
       let domFrag = document.createDocumentFragment();
+      
       for (let i = 0; i < concertArray.length; i++) {
         domFrag.appendChild(domComponents.createDomElement({
           elementType: "p",
           content: concertArray[i],
-        }))
-      }
+        }));
+        domFrag.appendChild(domComponents.createDomElement({
+          elementType: "button",
+          content: "Save",
+          cssClass: `concert${i}`,
+        }));
+      };
       // console.log(domFrag);
+      searchResultContainer.appendChild(domFrag);
       return domFrag;
-
-
     },
 };

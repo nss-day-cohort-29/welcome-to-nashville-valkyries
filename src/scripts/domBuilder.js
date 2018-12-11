@@ -58,7 +58,7 @@ const domBuilder = {
                 cssClass: "concert",
                 attributes: {
                     id: 'concert-button',
-                }
+                },
                 
             }));
             let searchButton = document.getElementById("concert-button");

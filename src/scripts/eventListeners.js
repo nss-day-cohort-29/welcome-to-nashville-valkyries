@@ -10,8 +10,7 @@ const eventListeners = {
     // console.log(parsedConcerts);  
     
     // console.log(queryResult);
-  
-  }
+  },
 };
 
 

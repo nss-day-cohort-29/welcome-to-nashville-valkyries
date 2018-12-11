@@ -32,3 +32,10 @@ section {
     margin: 5px;
     padding: 2px;
 }
+
+.search-result-box {
+    color: 	#3d3a4b;
+    background-color: #a79a8f;
+    margin: 5px;
+    padding: 5px;
+}
