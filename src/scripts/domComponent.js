@@ -35,6 +35,7 @@ const domComponents = {
           content: "Save",
           cssClass: `concert${i}`,
         }));
+        
       };
       // console.log(domFrag);
       searchResultContainer.appendChild(domFrag);

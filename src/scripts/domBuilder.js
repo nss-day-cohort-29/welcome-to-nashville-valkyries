@@ -67,9 +67,11 @@ const domBuilder = {
             });
     },
     appendAllResources(searchResultfrags) {
-        // console.log(searchResultfrags);
+        
         let resultsContainer = document.getElementById("display-container");
         resultsContainer.appendChild(searchResultfrags);
+        
+
     }
 };
 
