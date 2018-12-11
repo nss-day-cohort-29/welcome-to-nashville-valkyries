@@ -11,28 +11,62 @@ const domBuilder = {
         
         // 1 PARK 
        // 2 RESTAURANT 
+       let restaurantInputAndButtonContainer = document.createElement("div");
+       formContainer.appendChild(restaurantInputAndButtonContainer);
+
+       restaurantInputAndButtonContainer.appendChild(
+           domComponents.createDomElement({
+               elementType: "input",
+               cssClass: "restaurants",
+               attributes: {
+                   type: "text",
+                   placeholder: "restaurants",
+               },
+           })
+       );
+       restaurantInputAndButtonContainer.appendChild(
+           domComponents.createDomElement({
+               elementType: "button",
+               content: "Search Nashville Restaurants",
+               cssClass: "restaurants",
+               attributes: {
+                   id: "restaurant-button"
+               },
+           })
+       );
+        let restaurantSearchButton = document.getElementById("restaurant-button");
+        restaurantSearchButton.addEventListener("click",  (event) => {
+            eventListeners.handleRetaurantButton(event.target.className);
+        });
        
         // // 3 MEETUPS 
-        // let meetupInputAndButtonContainer = document.createElement("div");
-        // formContainer.appendChild(meetupInputAndButtonContainer);
+        let meetupInputAndButtonContainer = document.createElement("div");
+        formContainer.appendChild(meetupInputAndButtonContainer);
 
-        // meetupInputAndButtonContainer.appendChild(
-        //     domComponents.createDomElement({
-        //       elementType: "input",
-        //       attributes: {
-        //           type: "text",
-        //           placeholder: "meetups",
-        //       },    
-        //     })
-        // );
-        // meetupInputAndButtonContainer.appendChild(
-        //     domComponents.createDomElement({
-        //         elementType: "button",
-        //         attributes: {
-        //             id: "meetup-button",
-        //         }
-        //     })
-        // );
+        meetupInputAndButtonContainer.appendChild(
+            domComponents.createDomElement({
+              elementType: "input",
+              cssClass: "meetups",
+              attributes: {
+                  type: "text",
+                  placeholder: "meetups",
+              },    
+            })
+        );
+        meetupInputAndButtonContainer.appendChild(
+            domComponents.createDomElement({
+                elementType: "button",
+                content: "Search Nashville Meetups",
+                cssClass: "meetups",
+                attributes: {
+                    id: "meetup-button",
+                },
+            })
+        );
+        let meetupSearchButton = document.getElementById("meetup-button");
+        meetupSearchButton.addEventListener("click",  (event) => {
+            eventListeners.handleMeetupSearchButton(event.target.className);
+        });
         
        
         // 4 CONCERT 
@@ -47,29 +81,31 @@ const domBuilder = {
                 attributes: {
                     id: "concert-input",
                     type: 'text',
-                    placeholder: 'Star Wars Character',
+                    placeholder: 'Genre',
                 },
             })
         );
         concertInputAndButtonContainer.appendChild(
             domComponents.createDomElement({
                 elementType: "button",
-                content: "Search StarWars Character",
+                content: "Search Nashville Concert",
                 cssClass: "concert",
                 attributes: {
                     id: 'concert-button',
-                }
+                },
                 
             }));
-            let searchButton = document.getElementById("concert-button");
-            searchButton.addEventListener("click",  (event) => {
-                eventListeners.handleSearchButton(event.target.className);
+            let concertSearchButton = document.getElementById("concert-button");
+            concertSearchButton.addEventListener("click",  (event) => {
+                eventListeners.handleConcertButton(event.target.className);
             });
     },
     appendAllResources(searchResultfrags) {
-        // console.log(searchResultfrags);
+        
         let resultsContainer = document.getElementById("display-container");
         resultsContainer.appendChild(searchResultfrags);
+        
+
     }
 };
 

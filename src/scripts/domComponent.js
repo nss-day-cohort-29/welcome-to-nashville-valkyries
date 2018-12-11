@@ -1,4 +1,3 @@
-// This module is responsible for appending DOM components to the DOM.
 
 const domComponents = {
     createDomElement({ elementType, content = null, cssClass = '', attributes = {} }) {
@@ -15,29 +14,32 @@ const domComponents = {
       }
       return element;
     },
-    createResourcesDocumentFragments(resourcesArray) {
-      let domFrag = document.createDocumentFragment();
-
-      resourcesArray.results.forEach((character) => {
-        console.log(character.name);
-        const nameContainer = this.createDomElement({
-          elementType: "section",
-          content: character.name,
-          cssClass: "searchResult",
-        });
-        console.log(nameContainer);
-        for (property in character) {
-          // console.log(character);
-          nameContainer.appendChild(this.createDomElement({
-            elementType: "p",
-            content: character[property],
-            cssClass: "more-info",
-          }))
-        }
-        domFrag.appendChild(nameContainer);
+    createResourcesDocumentFragments(concertArray) {
+      console.log(concertArray.length);
+      const homeDiv = document.getElementById("display-container")
+      let searchResultContainer = this.createDomElement({
+        elementType: "div",
+        content: "YOUR SEARCH RESULTS ARE",
+        cssClass: "search-result-box"
       })
+      homeDiv.appendChild(searchResultContainer);
+      let domFrag = document.createDocumentFragment();
+      
+      for (let i = 0; i < concertArray.length; i++) {
+        domFrag.appendChild(domComponents.createDomElement({
+          elementType: "li",
+          content: concertArray[i],
+        }));
+        domFrag.appendChild(domComponents.createDomElement({
+          elementType: "button",
+          content: "Save",
+          cssClass: `concert${i}`,
+        }));
+        
+      };
+      
       // console.log(domFrag);
+      searchResultContainer.appendChild(domFrag);
       return domFrag;
-
-    }
+    },
 };

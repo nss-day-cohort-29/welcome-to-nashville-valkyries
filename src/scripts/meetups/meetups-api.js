@@ -17,11 +17,16 @@ const meetupsObject = {
                 //         })
                 // }
                 eventsArray.push(eventName);
+                console.log(eventsArray);
             });
+            let domFragReturn = domComponents.createResourcesDocumentFragments(eventsArray);
+            console.log(domFragReturn);
+            domBuilder.appendAllResources(domFragReturn);
         })
         //domBuilder.domCompBuilder(eventsArray);
+        
 }};
 
-meetupsObject.meetUpsFetch("Music");
+// meetupsObject.meetUpsFetch("Music");
 
 console.log(eventsArray);
