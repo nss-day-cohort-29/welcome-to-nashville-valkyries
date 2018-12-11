@@ -81,6 +81,15 @@ section {
 .search-result-box {
     color: 	#3d3a4b;
     background-color: #a79a8f;
-    margin: 5px;
-    padding: 5px;
+    width: 60%;
+    margin: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 10px 0 rgba(0,0,0,0.19);
+}
+
+li {
+    list-style-type: none;
 }
