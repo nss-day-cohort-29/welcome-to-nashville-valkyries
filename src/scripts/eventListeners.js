@@ -25,6 +25,25 @@ const eventListeners = {
 
     meetupsObject.meetUpsFetch(searchButtonCall)
   },
+  handleparkButton() {
+    // console.log("helloPark")
+    var e = document.getElementById("park-selection");
+    var text = e.options[e.selectedIndex].text;
+    console.log(text);
+    
+    
+    // let parkTypes = ["Dog Park", "Biking Trails", "BasketBall Courts", "VolleyBall", "lake", "Baseball Fields", "Picnic Shelters"];
+    let keyArray = ["dog_park","hiking_trails", "basketball_courts", "volleyball", "lake", "baseball_fields", "picnic_shelters"];
+
+    for (let i = 0; i < parkTypes.length; i++) {
+      if (text === parkTypes[i]) {
+        text = keyArray[i]
+        parksFetch(text);
+      }
+    }
+
+
+  },
   saveButton(classname) {
     let saveContentPointer = classname.target.className;
     let chosenContentForItenerary = document.querySelector(`li[class='${saveContentPointer}']`)

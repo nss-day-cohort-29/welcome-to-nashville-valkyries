@@ -11,6 +11,10 @@
                   parksArray.push(parkName + " " + parkAddress);
                 });
                 console.table(parksArray)
+
+                let domFragReturn = domComponents.createResourcesDocumentFragments(parksArray);
+                console.log(domFragReturn);
+                domBuilder.appendAllResources(domFragReturn);
           })
   };
-  parksFetch("dog_park");
+//   parksFetch("dog_park");
