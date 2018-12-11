@@ -29,19 +29,21 @@ const domComponents = {
       homeDiv.appendChild(searchResultContainer);
       let domFrag = document.createDocumentFragment();
       
-      for (let i = 0; i < concertArray.length; i++) {
+      for (let i = 0; i < concertArray.length-1; i++) {
+        let itemClass = concertArray[0];
         domFrag.appendChild(this.createDomElement({
           elementType: "li",
-          content: concertArray[i],
-          cssClass: `result${i}`,
+          cssClass: `${itemClass}-result${i}`,
+          content: concertArray[i+1],
         }));
         domFrag.appendChild(this.createDomElement({
           elementType: "button",
           content: "Save",
-          cssClass: `result${i}`,
+          cssClass: `${itemClass}-result${i}`,
         }));
         
       };
+
       
       // console.log(domFrag);
       searchResultContainer.appendChild(domFrag);
