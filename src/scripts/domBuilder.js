@@ -1,5 +1,5 @@
 //Initial user experience (what they see first)
-
+let parkTypes = ["Dog Park", "Hiking Trails", "BasketBall Courts", "VolleyBall", "Lake", "Baseball Fields", "Picnic Shelters"];
 const domBuilder = {
     appendInputForm () {
         //attach to div in index.html
@@ -13,9 +13,10 @@ const domBuilder = {
         let parkDropdownAndButtonContainer = document.createElement("div");
         formContainer.appendChild(parkDropdownAndButtonContainer);
         let parkDropDown = document.createElement("select");
+        parkDropDown.setAttribute("id", "park-selection")
         parkDropdownAndButtonContainer.appendChild(parkDropDown);
 
-        let parkTypes = ["Dog Park", "Biking Trails", "BasketBall Courts", "VolleyBall", "Lake", "Baseball Fields", "Picnic Shelters"];
+        
         let parkClassNames = ["parkOptionDog", "parkOptionHike", "parkOptionBasketBall", "parkOptionLake", "parkOptionBaseballFields", "parkOptionPicnicShelters"];
 
         
@@ -25,6 +26,23 @@ const domBuilder = {
             optionElement.setAttribute("class", parkClassNames[i]);
             parkDropDown.appendChild(optionElement);
         };
+        
+        parkDropdownAndButtonContainer.appendChild(
+            domComponents.createDomElement({
+                elementType: "button",
+                content: "Select Park Feature",
+                cssClass: "parks",
+                attributes: {
+                    id: "park-button"
+                },
+
+            })
+        );
+
+        let parkSearchButton = document.getElementById("park-button");
+        parkSearchButton.addEventListener("click",  (event) => {
+            eventListeners.handleparkButton(event.target.className);
+        });
 
        // 2 RESTAURANT 
        let restaurantInputAndButtonContainer = document.createElement("div");
