@@ -27,7 +27,7 @@ const domComponents = {
       
       for (let i = 0; i < concertArray.length; i++) {
         domFrag.appendChild(domComponents.createDomElement({
-          elementType: "p",
+          elementType: "li",
           content: concertArray[i],
         }));
         domFrag.appendChild(domComponents.createDomElement({
@@ -37,6 +37,7 @@ const domComponents = {
         }));
         
       };
+      
       // console.log(domFrag);
       searchResultContainer.appendChild(domFrag);
       return domFrag;

@@ -1,14 +1,14 @@
-let today = new Date();
-let searchDate = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
-
-let parsedConcerts = [];
 
 // console.log(concertsDefaultParam);
 // const concertsFetch = (string) => {
-//         console.log("hello", string);
-// }
-function concertsFetch (musicsearchUserInput) {
-//        console.log(musicsearchUserInput); 
+        //         console.log("hello", string);
+        // }
+        function concertsFetch (musicsearchUserInput) {
+                let today = new Date();
+                let searchDate = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
+                
+                let parsedConcerts = [];
+                //        console.log(musicsearchUserInput); 
         
         fetch
 (`https://app.ticketmaster.com/discovery/v2/events.json?dmaId=343&classificationName=${musicsearchUserInput}&localStartDateTime=${searchDate}T00:00:01,${searchDate}T23:59:59&apikey=gOoLh8VX4xnv0GAbvCblAvu8bCKOVE95`)

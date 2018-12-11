@@ -13,26 +13,27 @@ const domBuilder = {
        // 2 RESTAURANT 
        
         // // 3 MEETUPS 
-        // let meetupInputAndButtonContainer = document.createElement("div");
-        // formContainer.appendChild(meetupInputAndButtonContainer);
+        let meetupInputAndButtonContainer = document.createElement("div");
+        formContainer.appendChild(meetupInputAndButtonContainer);
 
-        // meetupInputAndButtonContainer.appendChild(
-        //     domComponents.createDomElement({
-        //       elementType: "input",
-        //       attributes: {
-        //           type: "text",
-        //           placeholder: "meetups",
-        //       },    
-        //     })
-        // );
-        // meetupInputAndButtonContainer.appendChild(
-        //     domComponents.createDomElement({
-        //         elementType: "button",
-        //         attributes: {
-        //             id: "meetup-button",
-        //         }
-        //     })
-        // );
+        meetupInputAndButtonContainer.appendChild(
+            domComponents.createDomElement({
+              elementType: "input",
+              attributes: {
+                  type: "text",
+                  placeholder: "meetups",
+              },    
+            })
+        );
+        meetupInputAndButtonContainer.appendChild(
+            domComponents.createDomElement({
+                elementType: "button",
+                content: "Search Nashville Meetups",
+                attributes: {
+                    id: "meetup-button",
+                }
+            })
+        );
         
        
         // 4 CONCERT 
@@ -47,7 +48,7 @@ const domBuilder = {
                 attributes: {
                     id: "concert-input",
                     type: 'text',
-                    placeholder: 'Search',
+                    placeholder: 'Genre',
                 },
             })
         );
