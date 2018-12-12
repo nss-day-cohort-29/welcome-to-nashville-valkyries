@@ -54,7 +54,7 @@ const domBuilder = {
                cssClass: "restaurants",
                attributes: {
                    type: "text",
-                   placeholder: "restaurants",
+                   placeholder: "Restaurants by Food Type",
                },
            })
        );
@@ -83,7 +83,7 @@ const domBuilder = {
               cssClass: "meetups",
               attributes: {
                   type: "text",
-                  placeholder: "meetups",
+                  placeholder: "Meetups by Type",
               },    
             })
         );
@@ -115,7 +115,7 @@ const domBuilder = {
                 attributes: {
                     id: "concert-input",
                     type: 'text',
-                    placeholder: 'Genre',
+                    placeholder: 'Concerts by Genre',
                 },
             })
         );
@@ -148,14 +148,14 @@ const domBuilder = {
         let itineraryContainer = document.getElementById("itinerary-container");
         itineraryContainer.appendChild(domComponents.createDomElement({
             elementType: "button",
-            content: "store itinerary",
+            content: "Store My Itinerary",
             attributes: {
                 id: 'store-itinerary'
             }
         }));
         itineraryContainer.appendChild(domComponents.createDomElement({
             elementType: "button",
-            content: "clear itinerary",
+            content: "Clear My Itinerary",
             attributes: {
                 id: 'clear-itinerary'
             }
