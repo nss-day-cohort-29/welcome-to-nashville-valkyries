@@ -1,49 +1,43 @@
-
 const eventListeners = {
-  handleConcertButton(classname) {
-    let searchInput = document.querySelector(`input[class='${classname}']`);
-    let searchButtonCall = searchInput.value;
-    searchInput.value = "";
-    // console.log(searchButtonCall);
-    
-    concertsFetch(searchButtonCall);
-
-  },
-  handleRetaurantButton(classname) {
-    let restaurantSearchInput = document.querySelector(`input[class='${classname}']`);
-    let restaurantSearchButtonCall = restaurantSearchInput.value;
-    restaurantSearchInput.value = "";
-    // console.log(restaurantSearchButtonCall)
-
-    restarauntFetch(restaurantSearchButtonCall)
-  },
-  handleMeetupSearchButton(classname) {
-    let searchInput = document.querySelector(`input[class='${classname}']`);
-    let searchButtonCall = searchInput.value;
-    searchInput.value = "";
-    // console.log(searchButtonCall);
-
-    meetupsObject.meetUpsFetch(searchButtonCall)
-  },
-  handleparkButton() {
-    // console.log("helloPark")
-    var e = document.getElementById("park-selection");
-    var text = e.options[e.selectedIndex].text;
-    console.log(text);
-    
-    
-    // let parkTypes = ["Dog Park", "Biking Trails", "BasketBall Courts", "VolleyBall", "lake", "Baseball Fields", "Picnic Shelters"];
-    let keyArray = ["dog_park","hiking_trails", "basketball_courts", "volleyball", "lake", "baseball_fields", "picnic_shelters"];
-
-    for (let i = 0; i < parkTypes.length; i++) {
-      if (text === parkTypes[i]) {
-        text = keyArray[i]
-        parksFetch(text);
-      }
+  handleButton (classname) {
+    switch (classname) {
+      case "concert":
+        let concertsSearchInput = document.querySelector(`input[class='${classname}']`);  
+        let concertSearchButtonCall = concertsSearchInput.value;
+        concertsSearchInput.value = "";
+        concertsFetch(concertSearchButtonCall);
+        break;
+      case "restaurants":
+        let restaurantsSearchInput = document.querySelector(`input[class='${classname}']`);  
+        let restaurantsSearchButtonCall = restaurantsSearchInput.value;
+        restaurantsSearchInput.value = "";
+        restarauntFetch(restaurantsSearchButtonCall);
+        break;
+      case "meetups":
+        let meetupsSearchInput = document.querySelector(`input[class='${classname}']`);  
+        let meetupsSearchButtonCall = meetupsSearchInput.value;
+        meetupsSearchInput.value = "";
+        meetupsObject.meetUpsFetch(meetupsSearchButtonCall);
+        break;
+      case "parks":
+        var e = document.getElementById("park-selection");
+        var text = e.options[e.selectedIndex].text;
+        console.log(classname);
+        
+        let keyArray = ["dog_park","hiking_trails", "basketball_courts", "volleyball", "lake", "baseball_fields", "picnic_shelters"];
+  
+        for (let i = 0; i < parkTypes.length; i++) {
+          if (text === parkTypes[i]) {
+            text = keyArray[i]
+            parksFetch(text);
+          }
+        }
+        break;
+      default:
+        break;
     }
-
-
   },
+ 
   saveButton(classname) {
     let elementToRemove = document.querySelector(".search-result-box");
     let saveContentPointer = classname.target.className;
@@ -63,14 +57,13 @@ const eventListeners = {
         concatString = `Meetup: ${savedContent} `
         break;
       case "concerts":
-        concatString = `Concert: ${savedContent} `
+        concatString = `Concert: ${savedContent}`
+        
         break;
       default:
         break;
     }
-    console.log(`ConcatString:  ${concatString}`)
     domComponents.appendIteneraryFragments(concatString);
-
     elementToRemove.parentNode.removeChild(elementToRemove);
   },
   clearItineraryButton(){
@@ -93,6 +86,48 @@ const eventListeners = {
   },
 
 };
+
+ // handleConcertButton(classname) {
+  //   let searchInput = document.querySelector(`input[class='${classname}']`);
+  //   let concertSearchButtonCall = searchInput.value;
+  //   searchInput.value = "";
+  //   console.log(classname);
+    
+  //   concertsFetch(concertSearchButtonCall);
+
+  // },
+  // handleRetaurantButton(classname) {
+  //   let restaurantSearchInput = document.querySelector(`input[class='${classname}']`);
+  //   let restaurantSearchButtonCall = restaurantSearchInput.value;
+  //   restaurantSearchInput.value = "";
+  //   console.log(classname);
+
+  //   restarauntFetch(restaurantSearchButtonCall)
+  // },
+  // handleMeetupSearchButton(classname) {
+  //   let searchInput = document.querySelector(`input[class='${classname}']`);
+  //   let searchButtonCall = searchInput.value;
+  //   searchInput.value = "";
+  //   console.log(classname);
+
+  //   meetupsObject.meetUpsFetch(searchButtonCall)
+  // },
+
+  // handleparkButton(classname) {
+  //   // console.log("helloPark")
+  //   var e = document.getElementById("park-selection");
+  //   var text = e.options[e.selectedIndex].text;
+  //   console.log(classname);
+    
+  //   let keyArray = ["dog_park","hiking_trails", "basketball_courts", "volleyball", "lake", "baseball_fields", "picnic_shelters"];
+
+  //   for (let i = 0; i < parkTypes.length; i++) {
+  //     if (text === parkTypes[i]) {
+  //       text = keyArray[i]
+  //       parksFetch(text);
+  //     }
+  //   }
+  // },
 
 
 // const eventListeners = (() => {
