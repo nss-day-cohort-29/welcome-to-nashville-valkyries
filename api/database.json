@@ -1,3 +1,16 @@
 {
-  "resources": []
+  "resources": [
+    {
+      "itinerary": "YOUR ITINERARY SELECTIONS ARE store itineraryclear itineraryPark: Shelby Park Shelby Ave at South 20th St ",
+      "id": 1
+    },
+    {
+      "itinerary": "YOUR ITINERARY SELECTIONS ARE store itineraryclear itineraryPark: Shelby Park Shelby Ave at South 20th St Park: Louise and Rebecca Dudley Park 305 Chestnut St Concert: Mannheim Steamroller Christmas By Chip Davis, at Tennessee Theatre, Genre: New Age Park: Cleveland Park 925 N 6th St ",
+      "id": 2
+    },
+    {
+      "itinerary": "YOUR ITINERARY SELECTIONS ARE store itineraryclear itineraryConcert: Cirque Dreams Holidaze, at Grand Ole Opry House, Genre: Performance Art Park: Louise and Rebecca Dudley Park 305 Chestnut St ",
+      "id": 3
+    }
+  ]
 }

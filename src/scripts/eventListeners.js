@@ -79,7 +79,17 @@ const eventListeners = {
     domBuilder.itineraryButtonBuilder();
   },
   storeItineraryButton(){
-    console.log("clickStore");
+    let storeItinerary = document.getElementById("itinerary-container")
+    let storedData = storeItinerary.textContent
+    let itineraryObject = {itinerary: storedData};
+    // const myJson = JSON.stringify(itineraryObject);
+    data.postData(itineraryObject);
+  },
+  clearSearchReults(){
+    let goodByeSearchResults = document.querySelector(".search-result-box");
+    goodByeSearchResults.parentNode.removeChild(goodByeSearchResults);
+    
+
   } 
 };
 

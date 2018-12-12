@@ -12,6 +12,10 @@ const domComponents = {
         element.addEventListener("click", eventListeners.saveButton)
       };
 
+      if(elementType === "button" && content === "cancel") {
+        element.addEventListener("click", eventListeners.clearSearchReults)
+      }
+
       for (let key in attributes) {
         element.setAttribute(key, attributes[key]);
       }
@@ -24,11 +28,18 @@ const domComponents = {
       let searchResultContainer = this.createDomElement({
         elementType: "div",
         content: "YOUR SEARCH RESULTS ARE ",
-        cssClass: "search-result-box"
-      })
+        cssClass: "search-result-box",
+      });
       homeDiv.appendChild(searchResultContainer);
       let domFrag = document.createDocumentFragment();
       
+      domFrag.appendChild(this.createDomElement({
+        elementType: 'button',
+        content: "cancel",
+        attributes: {
+          id: "clear-search-results"
+        },
+      }));
       for (let i = 0; i < resultsArray.length-1; i++) {
         let itemClass = resultsArray[0];
         domFrag.appendChild(this.createDomElement({

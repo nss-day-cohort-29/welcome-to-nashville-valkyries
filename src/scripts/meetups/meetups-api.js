@@ -34,4 +34,4 @@ const meetupsObject = {
         });
 }};
 
-console.log(eventsArray);
+// console.log(eventsArray);

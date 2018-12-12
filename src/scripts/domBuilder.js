@@ -154,7 +154,7 @@ const domBuilder = {
         let storeItineraryButton = document.getElementById("store-itinerary");
         let clearItineraryButton = document.getElementById("clear-itinerary");
         storeItineraryButton.addEventListener("click", () => {
-            
+            eventListeners.storeItineraryButton()
         });
         clearItineraryButton.addEventListener("click", () => {
             eventListeners.clearItineraryButton()
