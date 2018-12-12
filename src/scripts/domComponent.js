@@ -29,7 +29,7 @@ const domComponents = {
       const homeDiv = document.getElementById("display-container")
       let searchResultContainer = this.createDomElement({
         elementType: "div",
-        content: "YOUR SEARCH RESULTS ARE ",
+        content: "YOUR SEARCH RESULTS ARE: ",
         cssClass: "search-result-box",
       });
       homeDiv.appendChild(searchResultContainer);
@@ -37,7 +37,7 @@ const domComponents = {
       
       domFrag.appendChild(this.createDomElement({
         elementType: 'button',
-        content: "cancel",
+        content: "Cancel",
         attributes: {
           id: "clear-search-results"
         },
