@@ -91,6 +91,9 @@ const eventListeners = {
     let goodByeSearchResults = document.querySelector(".search-result-box");
     goodByeSearchResults.parentNode.removeChild(goodByeSearchResults);
   },
+  makeItineraryMenu(){
+    console.log("dyo yos")
+  }
 
 };
 

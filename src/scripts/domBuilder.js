@@ -139,10 +139,16 @@ const domBuilder = {
             oldItineraryBox.appendChild(domComponents.createDomElement({
                 elementType: "button",
                 content: "Previous Itineraries",
+                cssClass: "oldsaves",
                 attributes: {
                     id: "itinerary-holder",
-                }
-            }))
+                },
+            }));
+
+            let theFinalItinButton = document.getElementById("itinerary-holder");
+            theFinalItinButton.addEventListener("click",  (event) => {
+                eventListeners.makeItineraryMenu(event.target.className);
+            });
                },
     itineraryButtonBuilder() {
         let itineraryContainer = document.getElementById("itinerary-container");
