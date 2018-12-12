@@ -41,7 +41,7 @@ const domBuilder = {
 
         let parkSearchButton = document.getElementById("park-button");
         parkSearchButton.addEventListener("click",  (event) => {
-            eventListeners.handleparkButton(event.target.className);
+            eventListeners.handleButton(event.target.className);
         });
 
        // 2 RESTAURANT 
@@ -70,7 +70,7 @@ const domBuilder = {
        );
         let restaurantSearchButton = document.getElementById("restaurant-button");
         restaurantSearchButton.addEventListener("click",  (event) => {
-            eventListeners.handleRetaurantButton(event.target.className);
+            eventListeners.handleButton(event.target.className);
         });
        
         // // 3 MEETUPS 
@@ -99,7 +99,7 @@ const domBuilder = {
         );
         let meetupSearchButton = document.getElementById("meetup-button");
         meetupSearchButton.addEventListener("click",  (event) => {
-            eventListeners.handleMeetupSearchButton(event.target.className);
+            eventListeners.handleButton(event.target.className);
         });
         
        
@@ -131,7 +131,7 @@ const domBuilder = {
             }));
             let concertSearchButton = document.getElementById("concert-button");
             concertSearchButton.addEventListener("click",  (event) => {
-                eventListeners.handleConcertButton(event.target.className);
+                eventListeners.handleButton(event.target.className);
             });
     },
     appendAllResources(searchResultfrags) {

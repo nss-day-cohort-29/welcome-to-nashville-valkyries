@@ -9,10 +9,15 @@ function concertsFetch (concertsSearchParam) {
         .then (response => response.json())
         .then (concertInfo => {
                 parsedConcerts = ["concerts"];
-                concertInfo._embedded.events.forEach(concert => {
-                        let event = `${concert.name}, at ${concert._embedded.venues[0].name}, Genre: ${concert.classifications[0].genre.name}`;
-                        parsedConcerts.push(event)
-                });
+                if (concertInfo._embedded != null) {
+                        concertInfo._embedded.events.forEach(concert => {
+                                let event = `${concert.name}, at ${concert._embedded.venues[0].name}, Genre: ${concert.classifications[0].genre.name}`;
+                                parsedConcerts.push(event)
+                                });
+                } else {
+                     parsedConcerts.push("Sorry, there are no concerts available in that genre today.")  
+                }
+                
                 domBuilder.appendAllResources(domComponents.createResourcesDocumentFragments(parsedConcerts));
         });
-};
+}
