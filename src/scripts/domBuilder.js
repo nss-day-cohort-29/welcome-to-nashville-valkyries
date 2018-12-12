@@ -133,13 +133,39 @@ const domBuilder = {
             concertSearchButton.addEventListener("click",  (event) => {
                 eventListeners.handleConcertButton(event.target.className);
             });
+               },
+    itineraryButtonBuilder() {
+        let itineraryContainer = document.getElementById("itinerary-container");
+        itineraryContainer.appendChild(domComponents.createDomElement({
+            elementType: "button",
+            content: "store itinerary",
+            attributes: {
+                id: 'store-itinerary'
+            }
+        }));
+        itineraryContainer.appendChild(domComponents.createDomElement({
+            elementType: "button",
+            content: "clear itinerary",
+            attributes: {
+                id: 'clear-itinerary'
+            }
+        }));
+
+        let storeItineraryButton = document.getElementById("store-itinerary");
+        let clearItineraryButton = document.getElementById("clear-itinerary");
+        storeItineraryButton.addEventListener("click", () => {
+            
+        });
+        clearItineraryButton.addEventListener("click", () => {
+            eventListeners.clearItineraryButton()
+        });
     },
     appendAllResources(searchResultfrags) {
         
         let resultsContainer = document.getElementById("display-container");
         resultsContainer.appendChild(searchResultfrags);
 
-    }
+    },
 };
 
 /**
@@ -149,4 +175,5 @@ const domBuilder = {
  */
 
 domBuilder.appendInputForm();
+domBuilder.itineraryButtonBuilder();
 
