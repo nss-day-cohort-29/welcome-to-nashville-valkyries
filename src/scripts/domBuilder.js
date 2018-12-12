@@ -54,7 +54,7 @@ const domBuilder = {
                cssClass: "restaurants",
                attributes: {
                    type: "text",
-                   placeholder: "restaurants",
+                   placeholder: "restaurants by food type",
                },
            })
        );
@@ -83,7 +83,7 @@ const domBuilder = {
               cssClass: "meetups",
               attributes: {
                   type: "text",
-                  placeholder: "meetups",
+                  placeholder: "meetups by type",
               },    
             })
         );
@@ -115,7 +115,7 @@ const domBuilder = {
                 attributes: {
                     id: "concert-input",
                     type: 'text',
-                    placeholder: 'Genre',
+                    placeholder: 'concerts by genre',
                 },
             })
         );
