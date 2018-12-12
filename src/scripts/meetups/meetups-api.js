@@ -37,9 +37,10 @@ const meetupsObject = {
            
             // The below code creates a document fragment based on the populated event array and then appends it to the DOM
             let domFragReturn = domComponents.createResourcesDocumentFragments(eventsArray);
+
             domBuilder.appendAllResources(domFragReturn);
             console.log(eventsArray);
         });
 }};
 
-console.table(eventsArray);
+

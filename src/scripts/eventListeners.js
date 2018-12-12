@@ -54,16 +54,16 @@ const eventListeners = {
     
     switch (contentType) {
       case "restaurants":
-        concatString = `Restaurant: ${savedContent}`
+        concatString = `Restaurant: ${savedContent} `
         break;
       case "parks":
-        concatString = `Park: ${savedContent}`
+        concatString = `Park: ${savedContent} `
         break;
       case "meetups":
-        concatString = `Meetup: ${savedContent}`
+        concatString = `Meetup: ${savedContent} `
         break;
       case "concerts":
-        concatString = `Concert: ${savedContent}`
+        concatString = `Concert: ${savedContent} `
         break;
       default:
         break;
@@ -72,7 +72,26 @@ const eventListeners = {
     domComponents.appendIteneraryFragments(concatString);
 
     elementToRemove.parentNode.removeChild(elementToRemove);
-  } 
+  },
+  clearItineraryButton(){
+    let clearItineraryContainer = document.getElementById("itinerary-container");
+    clearItineraryContainer.textContent = "YOUR ITINERARY SELECTIONS ARE "
+    domBuilder.itineraryButtonBuilder();
+  },
+  storeItineraryButton(){
+    let storeItinerary = document.getElementById("itinerary-container")
+    let storedData = storeItinerary.textContent
+    let itineraryObject = {itinerary: storedData};
+    // const myJson = JSON.stringify(itineraryObject);
+    data.postData(itineraryObject);
+    storeItinerary.textContent = "YOUR ITINERARY SELECTIONS ARE "
+    domBuilder.itineraryButtonBuilder();
+  },
+  clearSearchReults(){
+    let goodByeSearchResults = document.querySelector(".search-result-box");
+    goodByeSearchResults.parentNode.removeChild(goodByeSearchResults);
+  },
+
 };
 
 
