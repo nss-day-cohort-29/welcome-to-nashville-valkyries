@@ -16,6 +16,8 @@ const domComponents = {
         element.addEventListener("click", eventListeners.clearSearchReults)
       }
 
+
+
       for (let key in attributes) {
         element.setAttribute(key, attributes[key]);
       }

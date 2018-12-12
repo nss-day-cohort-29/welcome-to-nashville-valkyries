@@ -133,6 +133,16 @@ const domBuilder = {
             concertSearchButton.addEventListener("click",  (event) => {
                 eventListeners.handleConcertButton(event.target.className);
             });
+            let oldItineraryBox = document.createElement("div");
+            formContainer.appendChild(oldItineraryBox);
+
+            oldItineraryBox.appendChild(domComponents.createDomElement({
+                elementType: "button",
+                content: "Previous Itineraries",
+                attributes: {
+                    id: "itinerary-holder",
+                }
+            }))
                },
     itineraryButtonBuilder() {
         let itineraryContainer = document.getElementById("itinerary-container");

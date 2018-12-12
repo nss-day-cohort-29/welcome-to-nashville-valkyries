@@ -84,13 +84,14 @@ const eventListeners = {
     let itineraryObject = {itinerary: storedData};
     // const myJson = JSON.stringify(itineraryObject);
     data.postData(itineraryObject);
+    storeItinerary.textContent = "YOUR ITINERARY SELECTIONS ARE "
+    domBuilder.itineraryButtonBuilder();
   },
   clearSearchReults(){
     let goodByeSearchResults = document.querySelector(".search-result-box");
     goodByeSearchResults.parentNode.removeChild(goodByeSearchResults);
-    
+  },
 
-  } 
 };
 
 
